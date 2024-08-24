@@ -1,0 +1,37 @@
+<div class="tic-tac-toe">
+  <div class="title">
+    <h1> Tic Tac Toe</h1>
+    <!-- <i class="bx bx-arrow-back"></i> -->
+  </div>
+    <div class="container">
+        <div class="game">
+            <div class="box" *ngFor="let box of boxes; let i = index" (click)="setInnerText($event,i)">{{box}}</div>
+        </div>
+    </div>
+    <div class="reset">
+        <button id="reset-btn" (click)="reset()">Reset Game</button>
+    </div>
+
+    <div class="modal" *ngIf="win || isDraw">
+        <div class="modal-content">
+            <div *ngIf="isDraw"><h2>{{drawStatement}}</h2>
+            </div>
+            <div *ngIf="win"><h2>{{winStatement}} {{winner}}</h2>
+            </div>
+          <button (click)="reset()">Restart Game</button>
+          <button  (click)="endGame()">End Game</button>
+        </div>
+      </div>
+
+      <div class="modal" *ngIf="player">
+        <div class="cross" (click)="closeModal()">&#10005;</div>
+        <div class="modal-content">
+            <label for="playerX">Player X:</label>
+            <input   [(ngModel)]="playerX" placeholder="Enter name for Player X" required/>
+            <label for="playerO">Player O:</label>
+            <input   [(ngModel)]="playerO" placeholder="Enter name for Player O" required/>
+          <button  class="player" (click)="submitPlayer()">Submit</button>
+          <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+        </div>
+      </div>
+</div>

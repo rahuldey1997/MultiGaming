@@ -1,0 +1,58 @@
+<div class="container">
+    <div>
+        <h1>Rock Paper Scissors</h1>
+        <!-- <i class="bx bx-arrow-back"></i> -->
+    </div>
+    <div class="choices">
+        <div class="choice" *ngFor="let choice of choices; let i = index" (click)="chooseOption($event,i)">
+            <img [src]="choice.image" class="options">
+        </div>
+    </div>
+    <div class="score-board">
+        <div class="score">
+            <p id="userScore">{{playerScore}}</p>
+            <p class="displaychoice" style="font-size: 1rem">{{player}} Choice: {{userChoice}}</p>
+            <p style="font-size: 2rem; margin-top: 2rem;">{{player}}</p>
+        </div>
+        <div class="score">
+            <p  id="compScore">{{compScore}}</p>
+            <p class="displaychoice" style="font-size: 1rem">{{computer}} Choice: {{compChoice}}</p>
+            <p style="font-size: 2rem; margin-top: 2rem;">{{computer}}</p>
+        </div>
+    </div>
+    <div class="msg-container">
+        <p class="msg">{{localWin}}</p>
+    </div>
+    <div class="reset">
+        <button id="reset-btn" (click)="reset()">Reset Game</button>
+    </div>
+    <div class="modal" *ngIf="!gameStart">
+        <div class="cross" (click)="closeModal()">&#10005;</div>
+        <div class="modal-content">
+            <div>
+                <label>Player: </label>
+            <input  [(ngModel)]="player" placeholder="Enter Player name" required/>
+            </div>
+            <div>
+                <label>Best Of:</label>
+            <input   [(ngModel)]="numberOfTrial" placeholder="Enter Number of Game" required/>
+            </div>
+          <div>
+            <button  class="player" (click)="submitPlayer()">Submit</button>
+          </div>
+          <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+        </div>
+      </div>
+
+      <div class="modal" *ngIf="gameEnd">
+        <div class="modal-content">
+            <div *ngIf="draw"><h2>{{drawStatement}}</h2>
+            </div>
+            <div><h2>Congratulation!</h2></div>
+            <div *ngIf="win"><h2>{{winStatement}} {{globalWin}}</h2>
+            </div>
+          <button (click)="reset()">Restart Game</button>
+          <button  (click)="endGame()">End Game</button>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,174 @@
+.tic-tac-toe {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #12ca8afe;
+  text-align: center;
+  height: 581px;
+  padding-top: 20px;
+  position: relative; /* Ensure elements like modal stay within this container */
+}
+
+h1 {
+  color: #f5fbfa;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container.blur {
+  filter: blur(5px); /* Blur effect when the modal is active */
+}
+
+.game {
+  margin-top: -70px;
+  height: 55vmin;
+  width: 55vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffc7;
+  height: 16vmin;
+  width: 16vmin;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #b0413e;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.box.disabled {
+  pointer-events: none; /* Disable clicks when the modal is active */
+}
+
+#reset-btn {
+  margin-top: -4rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #191913;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal styles */
+.modal {
+  
+  height: 80vh;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(227, 233, 152, 0.8); /* Semi-transparent background */
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(5px); /* Optional: Blurs the content behind the modal */
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  background-color: #191913;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.modal-content button:hover {
+  background-color: #333333;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 300px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #481f07;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.player {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background-color: #f19809;
+  color: #fcfcfcf4;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(156, 123, 72, 0.4);
+  transition: all 0.3s ease;
+}
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+.cross {
+  width:2rem;
+  height:2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e9e6e3d8;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.cross:hover {
+  color: #e9e6e3d8;
+}
+
+
+

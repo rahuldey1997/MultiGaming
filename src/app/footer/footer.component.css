@@ -1,0 +1,26 @@
+/* Footer container */
+.footer {
+    width: 100%;
+    
+    background: linear-gradient(135deg, #167f6f, #396894, #2b0656); /* Gradient color matching the navbar */
+    padding: 5px 0; /* Top and bottom padding */
+    text-align: center; /* Center align content */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size for footer text */
+    position: relative; /* Position relative for any potential child elements */
+    bottom: 0; /* Stick the footer to the bottom of the page */
+}
+
+/* Footer links */
+
+
+.footer p:hover {
+    text-decoration: underline; /* Underline on hover for better accessibility */
+}
+
+/* Footer copyright */
+.footer p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #cccccc; /* Slightly lighter color for less emphasis */
+}

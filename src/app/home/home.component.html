@@ -1,0 +1,20 @@
+<div class="container">
+  
+    <div class="search-container">
+      <input type="text" placeholder="Search" class="search-input" [(ngModel)]="searchValue" (input)="onSearch()">
+      <i class='bx bx-search search-icon'></i>
+    </div>
+    <div  class="message-container">
+      <span class="message" *ngIf="notFound">Search result not found</span>
+    </div>
+    <div class="game">
+        <div class="game-card" *ngFor="let game of filteredGames">
+        <img [src]="game.image" [alt]="game.name" class="game-image" />
+        <div class="game-details">
+          <p class="game-title">{{ game.name }}</p>
+          <button class="play-button" routerLink="/{{game.id}}">Play Now</button>
+        </div>
+      </div>
+    </div>  
+</div>
+  
