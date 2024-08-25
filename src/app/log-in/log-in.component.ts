@@ -32,10 +32,11 @@ export class LogInComponent  {
       this.username=user.username
       sessionStorage.setItem('isloggedIn', "true");
       sessionStorage.setItem('name', this.name);
-      this.router.navigate(['/home']);
+      // this.router.navigate(['/home']);
+      window.location.href = '/home'
     } else {
       this.loggedIn = false;
-      this.errorMessage = 'Invalid username or password';
+      this.errorMessage = 'Invalid username or passhrase';
     }
   }
 }

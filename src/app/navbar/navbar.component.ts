@@ -14,14 +14,18 @@ import { StorageService } from '../service/storage.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent{
+export class NavbarComponent implements OnInit{
   title: string="Multigaming Platform"
   name:any;
   logged:boolean=false;
   logIn:any;
   constructor(private router: Router, private storage: StorageService) {
-  
+     
    } 
+  ngOnInit() {
+    this.name=this.storage.getName()
+    this.logIn=this.storage.getIslogIn()
+  }
   logOut() {
     this.logged=false;
     this.router.navigate(['']);
