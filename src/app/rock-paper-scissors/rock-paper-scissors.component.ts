@@ -109,7 +109,7 @@ export class RockPaperScissorsComponent implements OnInit{
     {
       this.gameStart=true;
       this.count=this.numberOfTrial
-      console.log(this.count)
+    
     }
     else{
       this.errorMessage = "Kindly Fill Up The Input Field"

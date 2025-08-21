@@ -2,7 +2,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #12ca8afe;
   text-align: center;
-  height: 581px;
+  height: 83.5vh;
   padding-top: 20px;
   position: relative; /* Ensure elements like modal stay within this container */
 }
