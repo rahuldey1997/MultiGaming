@@ -1,0 +1,86 @@
+<div class="heading">
+    <h1>Snake Ladder</h1>
+</div>
+<div class="container">
+    
+  
+    <div class="container-2">
+        <div class="dice" *ngIf="!gameOver && gameStart">
+            <div class="dice-box">
+                <div *ngIf="display_dice" >
+                    <img *ngIf="dice" [src]="display_dice" alt="🎲" class="dice-image" />
+                </div>
+              
+                <div *ngIf="!display_dice" class="without-dice-image">
+                    <img [src]="dicepng" alt="🎲" class="dice-image" />
+                </div>
+            </div>
+          
+            <button class="roll-btn" (click)="rollDice()" [disabled]="!yourTurn">
+              🎲 Roll Dice
+            </button>
+          
+            
+            <div class="current-move">
+              👉 {{ currentPlayerName | titlecase }}  {{statement}}
+            </div>
+          </div>
+          <div class="board-wrapper">
+            <img [src]="boardImage" class="board-image" />
+            <div class="board">
+              <div class="cell" *ngFor="let cell of cells">
+                {{ cell }}
+                <div class="players">
+                  <ng-container *ngFor="let c of choice">
+                    <div
+                      class="player"
+                      [ngClass]="c.color"
+                      *ngIf="playerPositions[c.name]?.position === cell && playerPositions[c.name]?.canMove"
+                    ></div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" *ngIf="!gameStart">
+            <div class="cross" (click)="closeModal()">&#10005;</div>
+            <div class="modal-content">
+              <div>
+                <label>Player Name: </label>
+                <input [(ngModel)]="player" placeholder="Enter Player name" required/>
+              </div>
+          
+              <div>
+                <label>Select Color: </label>
+                <label>
+                  <input type="radio" name="color" [(ngModel)]="playerColor" value="red"/> Red
+                </label>
+                <label>
+                  <input type="radio" name="color" [(ngModel)]="playerColor" value="yellow"/> Yellow
+                </label>
+              </div>
+          
+              <div>
+                <button (click)="submitPlayer()">Submit</button>
+              </div>
+              <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+            </div>
+          </div>
+          
+    
+          <div class="modal" *ngIf="gameOver">
+            <div class="modal-content">               
+                <div><h2>Congratulation!</h2></div>
+                <div><h2>{{winStatement}} {{winner}}</h2>
+                </div>
+              <button (click)="reset()">Restart Game</button>
+              <button  (click)="endGame()">End Game</button>
+            </div>
+          </div>
+  
+   
+        
+  
+  </div>
+  

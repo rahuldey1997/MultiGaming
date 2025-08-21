@@ -15,7 +15,7 @@ import { StorageService } from '../service/storage.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  title: string="Multigaming Platform"
+  title: string="Retrogaming Platform"
   name:any;
   logged:boolean=false;
   logIn:any;

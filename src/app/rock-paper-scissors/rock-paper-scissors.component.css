@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 581px;
+    height: 83.5vh;
     gap: 20px; 
   }
   .choices {
