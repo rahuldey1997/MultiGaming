@@ -14,3 +14,54 @@ body {
     height: 83.5vh;
     gap: 20px; 
   }
+  .coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .coming-soon h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080;
+    margin-bottom: 2rem;
+    animation: glowPulse 2s infinite alternate;
+  }
+  
+  .coming-soon button {
+    padding: 12px 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .coming-soon button:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: #ff0080;
+    color: #ff0080;
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+  }
+  
+  @keyframes glowPulse {
+    from {
+      text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
+    }
+    to {
+      text-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 60px #ff0080;
+    }
+  }
+  
